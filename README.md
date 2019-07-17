@@ -55,6 +55,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 - Make redis optional.
 - Add common templates for easier usage.
 - Unit tests.
+- Add option to clear cache.
 - ...?
 
 ## License

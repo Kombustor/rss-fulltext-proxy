@@ -73,7 +73,7 @@ function transformFeed(originalFeed: Parser.Output) {
         description: originalFeed.description,
         feed_url: originalFeed.feedUrl,
         site_url: originalFeed.link,
-        image_url: originalFeed.image.url,
+        image_url: originalFeed.image ? originalFeed.image.url : undefined,
         managingEditor: originalFeed.managingEditor,
         copyright: originalFeed.copyright,
         language: originalFeed.language
