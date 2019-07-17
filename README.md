@@ -1,3 +1,6 @@
+![License](https://img.shields.io/github/license/Kombustor/rss-fulltext-proxy.svg)
+![Docker Pulls](https://img.shields.io/docker/pulls/kombustor/rss-fulltext-proxy.svg)
+
 # RSS Fulltext Proxy 📃
 
 Can "proxy"/mirror any RSS Feed to fetch full-text Content.
@@ -59,6 +62,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 - Add common templates for easier usage.
 - Unit tests.
 - Add option to clear cache.
+- Automated CI/CD.
 - ...?
 
 ## License
