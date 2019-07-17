@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: '.'
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - redis
+    environment:
+      - PORT=3000
+      - REDIS_URL=redis://redis
+    ports:
+      - 3000:3000
+
+  redis:
+    image: redis:alpine
