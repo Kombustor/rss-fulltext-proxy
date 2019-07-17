@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  redis:
+    image: redis:alpine
+
+  app:
+    build:
+      context: '..'
+      dockerfile: .devcontainer/Dockerfile
+    command: /bin/sh -c "while sleep 1; do :; done"
+    depends_on:
+      - redis
+    volumes:
+      - ..:/workspace
+    environment:
+      - PORT=3000
+      - REDIS_URL=redis://redis
+    ports:
+      - 3000:3000
