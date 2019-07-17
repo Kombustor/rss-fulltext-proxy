@@ -1,0 +1,93 @@
+version: 2
+
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:10.13.0
+
+jobs:
+  install:
+    <<: *defaults  
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+#  lint:
+#    <<: *defaults  
+#    steps:
+#      - attach_workspace:
+#          at: ~/repo
+
+#      - run:
+#          name: Run lint
+#          command: npm run lint
+#  test:
+#    <<: *defaults  
+#    steps:
+#      - attach_workspace:
+#          at: ~/repo
+
+#      - run:
+#          name: Run tests
+#          command: npm test
+  build:
+    <<: *defaults  
+    steps:
+      - attach_workspace:
+          at: ~/repo
+
+      - run:
+          name: Build project
+          command: npm run build
+  publish:
+    # Only runs when the branch is tagged (using git tag v...)
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Build project
+          command: npm run build
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+      - run:
+          name: Publish package
+          command: npm publish
+            
+workflows:
+  version: 2
+  lint_test_publish:
+    jobs:
+      - install
+#      - lint:
+#          requires:
+#            - install
+#      - test:
+#          requires:
+#            - install
+      - build:
+          requires:
+            - install
+      - publish:
+          requires:
+            - test
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
