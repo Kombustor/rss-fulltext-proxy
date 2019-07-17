@@ -1,9 +1,13 @@
 {
   "name": "rss-fulltext-proxy",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Proxies fulltext rss-content from rss feeds.",
   "author": "Fabian Schliski",
   "license": "MIT",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/Kombustor/rss-fulltext-proxy.git"
+  },
   "scripts": {
     "start": "node dist/server.js",
     "build": "tsc",
