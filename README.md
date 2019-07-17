@@ -47,6 +47,9 @@ We have to define two query parameters:
 - The URL we are adding to our feed reader is: `http://host:post/?feed=http://rss.sueddeutsche.de/rss/Topthemen&selectors=%5B%22figure.asset-image%22%2C%20%22section.body%20%3E%20p%2C%20section.body%20%3E%20h3%22%5D`
 - We are getting full-text RSS content for this feed. 🔥
 
+A collection of selectors can be found on the [wiki page](https://github.com/Kombustor/rss-fulltext-proxy/wiki/Selectors-Collection).
+If you create or improve a selector, feel free to open a pull request to add it to the wiki page.
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
