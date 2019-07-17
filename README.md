@@ -1,10 +1,9 @@
 ![CircleCI](https://img.shields.io/circleci/build/github/Kombustor/rss-fulltext-proxy.svg)
 ![License](https://img.shields.io/github/license/Kombustor/rss-fulltext-proxy.svg)
 ![Docker Pulls](https://img.shields.io/docker/pulls/kombustor/rss-fulltext-proxy.svg)
+[![Greenkeeper badge](https://badges.greenkeeper.io/Kombustor/rss-fulltext-proxy.svg)](https://greenkeeper.io/)
 
 # RSS Fulltext Proxy 📃
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/Kombustor/rss-fulltext-proxy.svg)](https://greenkeeper.io/)
 
 Can "proxy"/mirror any RSS Feed to fetch full-text Content.
 Allows integration into any feed reader, without plugins or further configuration required.
