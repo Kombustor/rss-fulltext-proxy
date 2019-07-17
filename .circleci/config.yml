@@ -53,21 +53,21 @@ jobs:
       - run:
           name: Build project
           command: npm run build
-  publish:
+ # publish:
     # Only runs when the branch is tagged (using git tag v...)
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/repo
-      - run:
-          name: Build project
-          command: npm run build
-      - run:
-          name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
-      - run:
-          name: Publish package
-          command: npm publish
+ #   <<: *defaults
+ #   steps:
+ #     - attach_workspace:
+ #         at: ~/repo
+ #     - run:
+ #         name: Build project
+ #         command: npm run build
+ #     - run:
+ #         name: Authenticate with registry
+ #         command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+ #     - run:
+ #         name: Publish package
+ #         command: npm publish
             
 workflows:
   version: 2
@@ -83,11 +83,11 @@ workflows:
       - build:
           requires:
             - install
-      - publish:
-          requires:
-            - test
-          filters:
-            tags:
-              only: /^v.*/
-            branches:
-              ignore: /.*/
+#      - publish:
+#          requires:
+#            - test
+#          filters:
+#            tags:
+#              only: /^v.*/
+#            branches:
+#              ignore: /.*/
