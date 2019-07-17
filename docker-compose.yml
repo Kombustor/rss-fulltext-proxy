@@ -2,9 +2,8 @@ version: '3.7'
 
 services:
   app:
-    build:
-      context: '.'
-      dockerfile: Dockerfile
+    image: kombustor/rss-fulltext-proxy:latest
+    container_name: rssproxy
     restart: unless-stopped
     depends_on:
       - redis
@@ -13,6 +12,23 @@ services:
       - REDIS_URL=redis://redis
     ports:
       - 3000:3000
+    networks:
+      - default
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.backend=rssproxy"
+      - "traefik.docker.network=web"
+      - "traefik.port=3000"
+      - "traefik.frontend.rule=Host:rssproxy.yourdomain.tld"
 
   redis:
     image: redis:alpine
+    container_name: rssproxy-redis
+    restart: unless-stopped
+    networks:
+      - default
+
+networks:
+  web:
+    external: true

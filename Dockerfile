@@ -19,6 +19,4 @@ RUN npm ci --only=production
 
 ENV NODE_ENV=production
 
-RUN ls -al /app
-
 CMD [ "node", "dist/server.js" ]
