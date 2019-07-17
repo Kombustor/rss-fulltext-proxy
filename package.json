@@ -5,8 +5,8 @@
   "author": "Fabian Schliski",
   "license": "MIT",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/Kombustor/rss-fulltext-proxy.git"
+    "type": "git",
+    "url": "https://github.com/Kombustor/rss-fulltext-proxy.git"
   },
   "scripts": {
     "start": "node dist/server.js",
