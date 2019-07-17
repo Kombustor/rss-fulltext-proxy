@@ -4,6 +4,8 @@
 
 # RSS Fulltext Proxy 📃
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Kombustor/rss-fulltext-proxy.svg)](https://greenkeeper.io/)
+
 Can "proxy"/mirror any RSS Feed to fetch full-text Content.
 Allows integration into any feed reader, without plugins or further configuration required.
 
