@@ -66,7 +66,8 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 - Linting.
 - Add option to clear cache.
 - Tutorial on how to choose selectors.
-- ...?
+- Webinterface to visually select elements that should be included/removed.
+- Support websites which don't provide a RSS feed.
 
 ## License
 
