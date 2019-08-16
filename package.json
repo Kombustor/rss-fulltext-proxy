@@ -35,7 +35,7 @@
     "@types/request-promise": "^4.1.44",
     "@types/rss": "0.0.28",
     "@types/xml2js": "^0.4.4",
-    "concurrently": "^4.1.1",
+    "concurrently": "^4.1.2",
     "nodemon": "^1.19.1",
     "typescript": "^3.5.3"
   }
