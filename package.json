@@ -36,7 +36,7 @@
     "@types/rss": "0.0.28",
     "@types/xml2js": "^0.4.4",
     "concurrently": "^4.1.1",
-    "nodemon": "^1.19.1",
+    "nodemon": "^2.0.1",
     "typescript": "^3.5.3"
   }
 }
