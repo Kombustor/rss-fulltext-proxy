@@ -13,7 +13,9 @@
     "build": "tsc",
     "build:watch": "tsc -w",
     "start:node": "nodemon dist/server.js",
-    "dev": "concurrently \"npm:build:watch\" \"npm:start:node\""
+    "dev": "concurrently \"npm:build:watch\" \"npm:start:node\"",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
@@ -23,7 +25,8 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "rss": "^1.2.2",
-    "rss-parser": "^3.7.2"
+    "rss-parser": "^3.7.2",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@types/cheerio": "^0.22.12",
@@ -38,5 +41,6 @@
     "concurrently": "^4.1.1",
     "nodemon": "^1.19.1",
     "typescript": "^3.5.3"
-  }
+  },
+  "snyk": true
 }
