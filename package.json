@@ -23,7 +23,7 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "rss": "^1.2.2",
-    "rss-parser": "^3.7.2"
+    "rss-parser": "^3.13.0"
   },
   "devDependencies": {
     "@types/cheerio": "^0.22.12",
