@@ -20,8 +20,8 @@
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "redis": "^2.8.0",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.4",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
     "rss": "^1.2.2",
     "rss-parser": "^3.7.2"
   },
